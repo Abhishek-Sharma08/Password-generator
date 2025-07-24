@@ -21,16 +21,16 @@ function App() {
     if (charAllowed) str += "!@#$%^&*()_-+={}[]~`"
 
     for (let i = 1; i <= length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1)
+      let char = Math.floor(Math.random() * str.length)
       pass += str.charAt(char)
     }
 
     setPassword(pass)
-  }, [length, numberAllowed, charAllowed, setPassword]) // this array for optimization
+  }, [length, numberAllowed, charAllowed, setPassword]) 
 
   useEffect(() => {
     passwordGenerator()
-  }, [length, numberAllowed, charAllowed, passwordGenerator]) // this array for re-run if somehing changed
+  }, [length, numberAllowed, charAllowed, passwordGenerator]) 
 
   return (
     <>
